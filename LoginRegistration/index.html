@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Login&Registation</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navigation">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/img/logo.png" alt="logoTravel"></a>
+                <h1>Travel</h1>
+            </div>
+
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="loginRegistration">
+                <a href="#"><input type="button" value="Login" class="active" id="signin"></a>
+                <a href="#"><input type="button" value="Sign Up" id="signup"></a>
+            </div>
+        </div>
+
+        <div class="diflex">
+
+            <!-- login -->
+            <div class="formContainer login">
+                <div class="leftContainer">
+                    <h2>Login</h2>
+                    <p>Sign In to continue</p>
+                    <p>Our log in form is designed with your convenience and security in mind, ensuring that accessing your travel plans is a breeze.</p>
+                    <p>Adventure awaits - log in and let the exploration begin !</p>
+                </div>
+
+                <div class="rightContainer">
+                    <form action="#">
+                        <h2>Sign In</h2>
+                        <div class="email-container content">
+                            <label for="email">E-mail</label>
+                            <input type="text" class="email" id="emailLogin" placeholder="Ex.jkamanda062@gmail.com" autocomplete="none">
+                            <span></span>
+                        </div>
+                        <div class="password-container content">
+                            <label for="password">Password</label>
+                            <div class="inputField">
+                                <input type="password" class="password" id="passwordLogout">
+                                <i class="icon"><img src="./assets/img/cacher.png" alt="icon oeil fermé"></i>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="rememberForgot">
+                            <div class="remember">
+                                <input type="checkbox" name="check" id="check">
+                                <label for="ckeck">Remember me</label>
+                            </div>
+
+                            <div class="forgot">
+                                <a href="#">forgot password ?</a>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Sign In">
+
+                        <span class="separate">or</span>
+                        <div class="socials">
+                            <a href="#"><img src="./assets/img/google.png" alt="Google"></a>
+                            <a href="#"><img src="./assets/img/fb.png" alt="Facebook"></a>
+                        </div>
+
+                        <p class="bottomP">Don't have an account ? <a href="#" id="signup">Sign Up</a></p>
+
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- registration -->
+            <div class="formContainer signup">
+                <div class="leftContainer">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up to continue</p>
+                    <p>Join our travel community in just a few simple steps and unclock a world of exclusive benefits.</p>
+                    <p>Sign up now and let the journey begin !</p>
+                </div>
+
+                <div class="rightContainer">
+                    <form action="#">
+                        <h2>Sign Up</h2>
+                        <div class="name-container content">
+                            <label for="name">Name</label>
+                            <input type="text" class="name input" id="name" placeholder="Ex. FromScratch2606">
+                            <span></span>
+                        </div>
+                        <div class="email-container content">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="emailLogout input" id="emailLogout" placeholder="Ex.jkamanda062@gmail.com" autocomplete="none">
+                            <span></span>
+                        </div>
+                        <div class="password-container content">
+                            <label for="password">Password</label>
+                            <div class="inputField">
+                                <input type="passwor" class="passwordLogout input" id="passwordLogout">
+                                <i class="icon"><img src="./assets/img/cacher.png" alt="icon oeil fermé"></i>
+                            </div>
+                            <span></span>
+                        </div>
+
+                        <div class="rulesContainer">
+                            <div class="rules">
+                                <img src="./assets/img/success_icon.png" alt="succèss icon">
+                                <p>One lowercase charactere</p>
+                            </div>
+                            <div class="rules">
+                                <img src="./assets/img/success_icon.png" alt="succèss icon">
+                                <p>One special charactere</p>
+                            </div>
+                            <div class="rules">
+                                <img src="./assets/img/success_icon.png" alt="succèss icon">
+                                <p>8 charactere minimum</p>
+                            </div>
+                        </div>
+
+                        <div class="age-container">
+                            <label for="yearOld">Your Age :</label>
+                            <input type="range" name="yearOld" min="15" max="100" value="18" id="yearOld" oninput="document.getElementById('age-lenght').value = this.value">
+                            <input type="text" value="18" id="age-lenght" readonly>
+                        </div>
+
+                        <input type="submit" value="Sign Up">
+
+                        <p class="bottomP">Do you ready have an account ? <a href="#" id="signin">Log in</a></p>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./assets/script/app.js"></script>
+</body>
+
+</html>

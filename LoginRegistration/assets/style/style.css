@@ -1,0 +1,423 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../font/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: "Allura";
+  src: url(../font/Allura-Regular.ttf);
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/Montserrat-VariableFont_wght.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", "Roboto", sans-serif;
+  letter-spacing: 0.8px;
+}
+:root {
+  --color-logo: #efaa1a;
+  --color-logo-hover: #f2be12;
+  --color-success: #2ecc71;
+  --color-error: #e74c3c;
+}
+body {
+  min-height: 100vh;
+  background: #141414f3;
+  color: #f1f1f1;
+  user-select: none;
+  overflow: hidden;
+}
+li {
+  list-style: none;
+}
+a,
+a:visited,
+a:focus {
+  text-decoration: none;
+  color: var(--color-logo);
+  transition: all 0.5s ease;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  background: url(../img/bgA.jpg) left/cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.315);
+  background-blend-mode: overlay;
+}
+.container .navigation {
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000000;
+  z-index: 100;
+  position: relative;
+}
+.navigation .logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.logo img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.logo h1 {
+  font-family: "Allura", "Roboto", sans-serif;
+  font-size: 3rem;
+  color: var(--color-logo);
+  width: 80%;
+}
+.navigation ul {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation ul li {
+  padding: 10px 10px;
+}
+ul li a {
+  width: 100%;
+  height: 100%;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  transition: all .4s ease-in-out;
+}
+ul li a:hover {
+  color: var(--color-logo-hover);
+}
+ul li a.active{
+  color: #000000;
+  background: var(--color-logo-hover);
+  padding: 5px 14px;
+  border-radius: 4px;
+}
+.navigation .loginRegistration {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px 20px;
+}
+.loginRegistration input {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  color: #f1f1f1;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.loginRegistration input:hover,
+.loginRegistration input.active {
+  background: var(--color-logo-hover);
+  font-weight: bold;
+  transform: scale(1.1);
+}
+/* .active{
+  background: var(--color-logo-hover);
+  font-weight: bold;
+} */
+.container .diflex{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.diflex .formContainer.login{
+  position: absolute;
+  transition: left .5s ease;
+  left: 0;
+}
+.diflex .formContainer.signup{
+  position: absolute;
+  right: -200%;
+  transition: right .5s ease;
+}
+.loginHiden{
+  left: -200% !important;
+}
+.logoutShow{
+  right: 0 !important;
+}
+
+
+
+.container .formContainer {
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: 0 0 7px #00000056;
+  background: #00000038;
+  color: #fff;
+  width: 100%;
+  margin: 8px auto 0;
+  transition: all .5s ease;
+}
+/* .container .registration{
+  display: none;
+  transition: all .4s ease;
+} */
+.formContainer .leftContainer {
+  width: 45%;
+  padding: 10px 0 20px;
+}
+.leftContainer h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.leftContainer p {
+  font-size: 0.89rem;
+  font-weight: 300;
+  width: 84%;
+}
+.leftContainer p:nth-child(2) {
+  font-size: 1rem;
+}
+.leftContainer p:nth-child(3) {
+  margin: 20px 0;
+}
+
+.formContainer .rightContainer {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightContainer form {
+  border-radius: 15px;
+  box-shadow: 0 0 7px #ffffff3b;
+  padding: 5px 20px 5px;
+  margin: 5px 20px;
+  background: #00000069;
+  width: 400px;
+}
+form h2 {
+  text-align: center;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+form .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 10px;
+}
+form .content input {
+  border: none;
+  border-radius: 100px;
+  padding: 14px 10px;
+  outline: none;
+  font-size: 0.9rem;
+  overflow: hidden;
+  margin: 2px 0 0;
+}
+form .content input:is(:focus) {
+  border: 1px solid var(--color-logo);
+}
+form .content .inputField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.content .inputField input {
+  width: 100%;
+}
+.content .inputField i {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  right: 0;
+  margin: 0 10px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputField i img {
+  object-fit: contain;
+}
+.content span{
+  width: 100%;
+  height: 10px;
+  margin: 2px 0;
+}
+form .rememberForgot{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rememberForgot .remember{
+  width: 50%;
+  text-align: start;
+}
+
+.remember label{
+  font-size: .8rem;
+}
+.rememberForgot .forgot{
+  width: 50%;
+  text-align: end;
+}
+.forgot a{
+  font-size: .8rem;
+}
+form .separate{
+  width: 100%;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+form .separate::before, form .separate::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  height: 2px;
+  background: #e2cea8;
+}
+form .separate::before{
+  left: 0;
+}
+form .separate::after{
+  right: 0;
+}
+form .socials{   
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.socials a{
+  width: 40px;
+  height: 40px;
+}
+.socials a img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+form .rulesContainer .rules {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+}
+.rules img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.rules p {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+form .age-container {
+  margin: 10px 0;
+  /* padding: 10px 0; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.age-container label {
+  font-size: 0.9rem;
+  width: 30%;
+}
+
+/* codes en provenance du générateur de mots de passe */
+/* debut */
+.age-container input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 150px;
+  background-image: linear-gradient(120deg, #e2cea8 0%, var(--color-logo)  100%);
+  border-radius: 50px;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgb(162, 202, 110) 0%,
+    rgb(212, 188, 52) 100%
+  );
+  background-blend-mode: multiply;
+  border-radius: 18px;
+  transform: translateY(-11px);
+  transition: 0.15s ease;
+  cursor: grab;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.2) translateY(-9px);
+}
+/* fin */
+
+.age-container input[type=text] {
+  width: 10%;
+  background: transparent;
+  color: var(--color-logo);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+.age-container input[type=text]:is(:focus, :active){
+    outline: none;
+    border: none;
+}
+
+form input[type=submit]{
+    width: 100%;
+    padding: 14px 10px;
+    margin: 25px 0;
+    background: var(--color-logo);
+    color: #f1f1f1;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all .5s ease;
+    font-size: .9rem;
+    font-weight: none;
+}
+form input[type=submit]:active{
+    transform: scale(1.01) translateY(-1px);
+}
+form .bottomP{
+    font-size: .8rem;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+.error span{
+  color: red;
+  font-size: .7rem;
+  border: none;
+}
