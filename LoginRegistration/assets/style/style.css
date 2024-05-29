@@ -20,7 +20,6 @@
 :root {
   --color-logo: #efaa1a;
   --color-logo-hover: #f2be12;
-  --color-success: #2ecc71;
   --color-error: #e74c3c;
 }
 body {
@@ -28,7 +27,7 @@ body {
   background: #141414f3;
   color: #f1f1f1;
   user-select: none;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 li {
   list-style: none;
@@ -43,8 +42,8 @@ a:focus {
 
 .container {
   position: relative;
-  min-height: 100vh;
-  background: url(../img/bgA.jpg) left/cover no-repeat;
+  min-height: 150vh;
+  background: url(../img/bgA.jpg) left/cover;
   background-color: rgba(0, 0, 0, 0.315);
   background-blend-mode: overlay;
 }
@@ -124,10 +123,7 @@ ul li a.active{
   font-weight: bold;
   transform: scale(1.1);
 }
-/* .active{
-  background: var(--color-logo-hover);
-  font-weight: bold;
-} */
+
 .container .diflex{
   display: flex;
   align-items: flex-start;
@@ -153,8 +149,6 @@ ul li a.active{
   right: 0 !important;
 }
 
-
-
 .container .formContainer {
   padding: 10px 20px;
   display: flex;
@@ -167,10 +161,7 @@ ul li a.active{
   margin: 8px auto 0;
   transition: all .5s ease;
 }
-/* .container .registration{
-  display: none;
-  transition: all .4s ease;
-} */
+
 .formContainer .leftContainer {
   width: 45%;
   padding: 10px 0 20px;
@@ -198,6 +189,8 @@ ul li a.active{
   align-items: center;
   justify-content: center;
 }
+
+/* form */
 .rightContainer form {
   border-radius: 15px;
   box-shadow: 0 0 7px #ffffff3b;
@@ -258,6 +251,11 @@ form .content .inputField {
   height: 10px;
   margin: 2px 0;
 }
+.error span{
+  color: var(--color-error);
+  font-size: .7rem;
+  border: none;
+}
 form .rememberForgot{
   display: flex;
   align-items: center;
@@ -316,6 +314,7 @@ form .socials{
   object-fit: contain;
 }
 
+/* conditions pour le mot de passe */
 form .rulesContainer .rules {
   display: flex;
   align-items: center;
@@ -355,14 +354,14 @@ form .age-container {
 input[type="range"]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   appearance: none;
-  height: 16px;
+  height: 8px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 10px;
-  height: 40px;
+  height: 30px;
   background: linear-gradient(
     to bottom,
     rgb(162, 202, 110) 0%,
@@ -380,6 +379,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 /* fin */
 
+/* input pour l'age */
 .age-container input[type=text] {
   width: 10%;
   background: transparent;
@@ -394,6 +394,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     border: none;
 }
 
+/* input submit */
 form input[type=submit]{
     width: 100%;
     padding: 14px 10px;
@@ -416,8 +417,84 @@ form .bottomP{
     font-weight: 100;
     margin-bottom: 10px;
 }
-.error span{
-  color: red;
-  font-size: .7rem;
-  border: none;
+.navigation .sidebar{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+}
+.sidebar span{
+  display: block;
+  margin: 2px 0;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--color-logo);
+}
+
+
+/* Responsive */
+/* Responsive */
+@media screen and (max-width: 745px){
+  .navigation .logo{
+    width: 30%;
+  }
+  .navigation ul{
+    width: 70%;
+  }
+  .navigation .loginRegistration{
+    display: none;
+  }
+}
+@media screen and (max-width: 680px){
+  .container .formContainer{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .formContainer .leftContainer{
+    width: 100%;
+  }
+  .formContainer .rightContainer{
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .rightContainer form{
+    margin: 30px 0;
+  }
+}
+@media screen and (max-width: 550px){
+  .navigation ul{
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 50%;
+    height: 200px;
+    right: -100%;
+    background: #000000da;
+    padding: 10px;
+    transition: all .7s ease;
+  }
+  .navigation ul li{
+    width: 93%;
+    text-align: center;
+    border: 1px solid #e2cea82d;
+  }
+  .navigation .sidebar{
+    display: block;
+  }
+  ul.showSide{
+    right: 0;
+  }
+}
+@media screen and (max-width: 400px){
+  .age-container label{
+    font-size: .8rem;
+  }
+  .age-container input[type="range"] {
+    width: 100px;
+  }
 }

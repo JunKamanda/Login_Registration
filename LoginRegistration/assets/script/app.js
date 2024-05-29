@@ -8,16 +8,26 @@ const icons = document.querySelectorAll(".icon");
 const passwordTypes = document.querySelectorAll("#passwordLogout");
 const form = document.querySelector(".signup > .rightContainer > form");
 const age = document.querySelector("#age-lenght");
+const sidebar = document.querySelector(".sidebar");
+const nav =  document.querySelector("ul");
 
-console.log(form);
+console.log(nav);
 
 let names, emails, passwords;
+//sidebar
+sidebar.addEventListener("click", ()=>{
+  nav.classList.toggle("showSide");
+})
+
 
 // NavBarActive
 listes.forEach((liste) => {
   liste.addEventListener("click", () => {
     document.querySelector(".active")?.classList.remove("active");
     liste.classList.toggle("active");
+
+    nav.classList.remove("showSide");
+
   });
 });
 
@@ -48,10 +58,6 @@ icons.forEach((icon) => {
     });
   });
 });
-
-const containerLogout = document.querySelector(".signup > .rightContainer > form > .email-container");
-
-console.log(containerLogout);
 
 // FORMS CHECKER
 const errorDisplayLogout = (tag, message, valid) => {
