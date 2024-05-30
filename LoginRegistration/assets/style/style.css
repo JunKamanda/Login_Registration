@@ -27,7 +27,7 @@ body {
   background: #141414f3;
   color: #f1f1f1;
   user-select: none;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 li {
   list-style: none;
@@ -42,10 +42,12 @@ a:focus {
 
 .container {
   position: relative;
-  min-height: 150vh;
-  background: url(../img/bgA.jpg) left/cover;
+  width: 100%;
+  min-height: 100vh;
+  background: url(../img/bgA.jpg) left/cover repeat;
   background-color: rgba(0, 0, 0, 0.315);
   background-blend-mode: overlay;
+  overflow-x: hidden;
 }
 .container .navigation {
   padding: 20px;
@@ -142,11 +144,11 @@ ul li a.active{
   right: -200%;
   transition: right .5s ease;
 }
-.loginHiden{
-  left: -200% !important;
+.formContainer.login.loginHiden{
+  left: -200%;
 }
-.logoutShow{
-  right: 0 !important;
+.formContainer.signup.logoutShow{
+  right: 0;
 }
 
 .container .formContainer {

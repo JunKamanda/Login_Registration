@@ -11,7 +11,7 @@ const age = document.querySelector("#age-lenght");
 const sidebar = document.querySelector(".sidebar");
 const nav =  document.querySelector("ul");
 
-console.log(nav);
+console.log(signupBtns);
 
 let names, emails, passwords;
 //sidebar
